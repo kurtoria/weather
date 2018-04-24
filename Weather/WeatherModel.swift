@@ -98,6 +98,11 @@ func getWeather(safeString : String, tableView : UITableView) {
     }
 }
 
+func degreesToInt(i : Int) -> Int {
+    let degrees = weatherResponse.list[i].main["temp"]
+    return Int(degrees!)
+}
+
 func getCityId (i : Int) -> Int {
     let id = weatherResponse.list[i].id
     return id

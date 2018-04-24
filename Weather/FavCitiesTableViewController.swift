@@ -26,6 +26,11 @@ class FavCitiesTableViewController: UITableViewController, UISearchResultsUpdati
         setupSearchBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupSearchBar()
+        tableView.reloadData()
+    }
+    
     //Set up search bar
     func setupSearchBar() {
         definesPresentationContext = true

@@ -47,15 +47,12 @@ class SearchCitiesViewController: UIViewController, UITableViewDelegate, UITable
             cell.cityLabel.text = ""
             cell.cityId = 0
         } else {
-            /*
-            cell.cityLabel.text = weatherResponse.list[indexPath.row].name + ", " + weatherResponse.list[indexPath.row].sys["country"]!
-            cell.cityId = weatherResponse.list[indexPath.row].id
-            print("City is: " + cell.cityLabel.text! + ", and CellId is: " + String(cell.cityId))
-            cell.degreesLabel.text = getDegrees(i: indexPath.row)
-            */
+            
             cell.cityId = indexPath.row
             cell.cityLabel.text = getCity(i: indexPath.row) + ", " + getCountryName(i: indexPath.row)
             cell.degreesLabel.text = getDegrees(i: indexPath.row)
+            print("Indexpath.row in tableview is: \(indexPath.row)")
+            print("CityId in tableview is: \(cell.cityId)")
         }
         return cell
         
@@ -77,23 +74,29 @@ class SearchCitiesViewController: UIViewController, UITableViewDelegate, UITable
         
             if let cell = sender as? SearchedCitiesTableViewCell {
                 let specificCity : SearchedSpecificCityViewController = segue.destination as! SearchedSpecificCityViewController
-                if cell.cityId != 0 {
-                    print("Id of city, not 0: \(cell.cityId)")
-                    
+
+                print("Id of city: \(cell.cityId)")
+                if let id = cell.cityId {
+                    /*
                     specificCity.city = getCity(i: cell.cityId)
                     specificCity.country = getCountryName(i: cell.cityId)
                     specificCity.degrees = getDegrees(i: cell.cityId)
                     specificCity.wind = getWind(i: cell.cityId)
                     specificCity.humidity = getHumidity(i: cell.cityId)
+                    specificCity.degreesInt = degreesToInt(i: cell.cityId)
+                    print("DegreesInt: \(specificCity.degreesInt)")
+                    */
+                    specificCity.city = getCity(i: id)
+                    specificCity.country = getCountryName(i: id)
+                    specificCity.degrees = getDegrees(i: id)
+                    specificCity.wind = getWind(i: id)
+                    specificCity.humidity = getHumidity(i: id)
+                    specificCity.degreesInt = degreesToInt(i: id)
+                    print("DegreesInt: \(specificCity.degreesInt)")
+                    print("Id in sendfunc: \(id) and cityId: \(cell.cityId)")
                     
-                    //#warning fix non-optional cityId
-                    //specificCity.passedCity = cell.cityId
-                    
-                } else {
-                    print("Id of city: \(cell.cityId)")
                 }
-                //specificCity.passedCity = String(cell.cityId)
-                //print("CellId is: " + String(cell.cityId))
+                    
             }
         }
     }

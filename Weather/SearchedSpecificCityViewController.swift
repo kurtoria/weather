@@ -21,6 +21,7 @@ class SearchedSpecificCityViewController: UIViewController {
     var wind : String = ""
     var humidity : String = ""
     var weatherComment : String = ""
+    var degreesInt : Int = 0
     
     
     var passedCity : Int!
@@ -29,7 +30,6 @@ class SearchedSpecificCityViewController: UIViewController {
         super.viewDidLoad()
         print("Degrees: \(degrees)")
 
-        // Do any additional setup after loading the view.
         setUpInfo()
     }
     
@@ -38,17 +38,15 @@ class SearchedSpecificCityViewController: UIViewController {
         cityLabel.text = city + ", " + country
         windLabel.text = wind
         humidityLabel.text = humidity
-        
-        print(degrees)
-        //#warning gör en ny metod som bara tar siffran och släng in här
-        if let number = Int(degrees) {
-            weatherCommentText.text = weatherComments(degrees: number)
-        }
-        
+        weatherCommentText.text = weatherComments(degrees: degreesInt)
     }
+    
     
     @IBAction func addToFav(_ sender: Any) {
         //favCities.append(passedCity)
+        let savedCity = city + ", " + country
+        favCities.append(savedCity)
+        print("favCities count: \(favCities.count)")
     }
     
     override func didReceiveMemoryWarning() {
