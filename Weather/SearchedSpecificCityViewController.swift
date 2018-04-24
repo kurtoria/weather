@@ -9,14 +9,48 @@
 import UIKit
 
 class SearchedSpecificCityViewController: UIViewController {
-    var passedCity = ""
-
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var degreesLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var windLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var weatherCommentText: UITextView!
+    var degrees : String = ""
+    var city : String = ""
+    var country : String = ""
+    var wind : String = ""
+    var humidity : String = ""
+    var weatherComment : String = ""
+    
+    
+    var passedCity : Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Degrees: \(degrees)")
 
         // Do any additional setup after loading the view.
+        setUpInfo()
     }
-
+    
+    func setUpInfo() {
+        degreesLabel.text = degrees
+        cityLabel.text = city + ", " + country
+        windLabel.text = wind
+        humidityLabel.text = humidity
+        
+        print(degrees)
+        //#warning gör en ny metod som bara tar siffran och släng in här
+        if let number = Int(degrees) {
+            weatherCommentText.text = weatherComments(degrees: number)
+        }
+        
+    }
+    
+    @IBAction func addToFav(_ sender: Any) {
+        //favCities.append(passedCity)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -32,5 +66,24 @@ class SearchedSpecificCityViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func weatherComments(degrees : Int) -> String {
+        switch degrees {
+        case -40...(-10):
+            return "Rätt megakallt"
+        case -9...0:
+            return "Ganska kallt"
+        case 1...5:
+            return "Kallare än du tror, det är itne vår än!!!"
+        case 6...9:
+            return "Helt ok"
+        case 10...20:
+            return "Svenskt sommarväder at it's best"
+        case 21...30:
+            return "Megavarmt"
+        default:
+            return "Oklart"
+        }
+    }
 
 }

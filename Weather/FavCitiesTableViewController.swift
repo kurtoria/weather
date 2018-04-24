@@ -10,7 +10,8 @@ import UIKit
 
 class FavCitiesTableViewController: UITableViewController, UISearchResultsUpdating {
     var searchController : UISearchController!
-    var favCities = ["Göteborg", "Strömstad", "Hamburgsund"]
+    //var favCities : [Int : String] = [:]
+    var favCities : [String] = []
     var searchResult : [String] = []
 
     override func viewDidLoad() {
@@ -33,9 +34,22 @@ class FavCitiesTableViewController: UITableViewController, UISearchResultsUpdati
         navigationItem.searchController = searchController
     }
     
+    /*
+    func fromIntToString(intArray : [Int]) -> [String] {
+        var stringArray : [String]
+        for one in intArray {
+            one = getCityName(i: )
+            stringArray.append(one)
+        }
+        return stringArray
+    }
+     */
+    
+    
     // #warning make more effective later by using own class for search bar
     func updateSearchResults(for searchController: UISearchController) {
         if let text = searchController.searchBar.text?.lowercased() {
+            //searchResult = favCities[String].filter({ $0.lowercased().contains(text) })
             searchResult = favCities.filter({ $0.lowercased().contains(text) })
         } else {
             searchResult = []

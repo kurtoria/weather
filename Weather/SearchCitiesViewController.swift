@@ -47,10 +47,15 @@ class SearchCitiesViewController: UIViewController, UITableViewDelegate, UITable
             cell.cityLabel.text = ""
             cell.cityId = 0
         } else {
+            /*
             cell.cityLabel.text = weatherResponse.list[indexPath.row].name + ", " + weatherResponse.list[indexPath.row].sys["country"]!
             cell.cityId = weatherResponse.list[indexPath.row].id
             print("City is: " + cell.cityLabel.text! + ", and CellId is: " + String(cell.cityId))
-            //cell.degreesLabel.text = weatherResponse.list[indexPath.row].main[]
+            cell.degreesLabel.text = getDegrees(i: indexPath.row)
+            */
+            cell.cityId = indexPath.row
+            cell.cityLabel.text = getCity(i: indexPath.row) + ", " + getCountryName(i: indexPath.row)
+            cell.degreesLabel.text = getDegrees(i: indexPath.row)
         }
         return cell
         
@@ -72,9 +77,23 @@ class SearchCitiesViewController: UIViewController, UITableViewDelegate, UITable
         
             if let cell = sender as? SearchedCitiesTableViewCell {
                 let specificCity : SearchedSpecificCityViewController = segue.destination as! SearchedSpecificCityViewController
-            
-                specificCity.passedCity = String(cell.cityId)
-                print("CellId is: " + String(cell.cityId))
+                if cell.cityId != 0 {
+                    print("Id of city, not 0: \(cell.cityId)")
+                    
+                    specificCity.city = getCity(i: cell.cityId)
+                    specificCity.country = getCountryName(i: cell.cityId)
+                    specificCity.degrees = getDegrees(i: cell.cityId)
+                    specificCity.wind = getWind(i: cell.cityId)
+                    specificCity.humidity = getHumidity(i: cell.cityId)
+                    
+                    //#warning fix non-optional cityId
+                    //specificCity.passedCity = cell.cityId
+                    
+                } else {
+                    print("Id of city: \(cell.cityId)")
+                }
+                //specificCity.passedCity = String(cell.cityId)
+                //print("CellId is: " + String(cell.cityId))
             }
         }
     }

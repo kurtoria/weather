@@ -55,8 +55,8 @@ func getWeather(safeString : String, tableView : UITableView) {
     //if let safeString = self.searchField.text!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
     print("Goes into func")
 
-    //if let url = URL(string: "http://api.openweathermap.org/data/2.5/find?q=\(safeString)&type=like&units=metric&APPID=14551d4f1ec5732a71a52639524f5d97") {
-        if let url = URL(string: "http://api.openweathermap.org/data/2.5/find?q=\(safeString)&type=like&units=metric&APPID=11c4663bbece8c9fa78ea61f96029874") {
+    if let url = URL(string: "http://api.openweathermap.org/data/2.5/find?q=\(safeString)&type=like&units=metric&APPID=14551d4f1ec5732a71a52639524f5d97") {
+        //if let url = URL(string: "http://api.openweathermap.org/data/2.5/find?q=\(safeString)&type=like&units=metric&APPID=11c4663bbece8c9fa78ea61f96029874") {
         let request = URLRequest(url: url)
         print("This is the url: \(url)")
         
@@ -96,7 +96,43 @@ func getWeather(safeString : String, tableView : UITableView) {
     } else {
         print("Bad url string.")
     }
-    
-    //searchField.text = ""
-    
 }
+
+func getCityId (i : Int) -> Int {
+    let id = weatherResponse.list[i].id
+    return id
+}
+
+func getCity(i : Int) -> String {
+    let name = weatherResponse.list[i].name
+    return name
+}
+
+func getCountryName(i : Int) -> String {
+    let country = weatherResponse.list[i].sys["country"]!
+    return country
+}
+
+func getDegrees(i : Int) -> String {
+    let degrees = String(format: "%.1f °C", weatherResponse.list[i].main["temp"]!)
+    return degrees
+}
+
+func getWind(i : Int) -> String {
+    let wind = String(format: "%.1f m/s", weatherResponse.list[i].wind["speed"]!)
+    return wind
+}
+
+func getHumidity(i : Int) -> String {
+    let humidity = String(format: "%.1f hpa", weatherResponse.list[i].main["humidity"]!)
+    return humidity
+}
+
+/*
+func getIconText(i : Int) -> String {
+    let iconText = String(format: "\(weatherResponse.list[i].weather["icon"]))
+    return iconText
+}
+*/
+
+
