@@ -12,7 +12,7 @@ class SearchedCitiesTableViewCell: UITableViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var degreesLabel: UILabel!
     
-    var cityId : Int!
+    var cityIndex : Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()

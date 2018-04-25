@@ -22,7 +22,8 @@ class SearchedSpecificCityViewController: UIViewController {
     var humidity : String = ""
     var weatherComment : String = ""
     var degreesInt : Int = 0
-    
+    var cityId : Int = 0
+    var imageIcon : String = ""
     
     var passedCity : Int!
     
@@ -39,14 +40,25 @@ class SearchedSpecificCityViewController: UIViewController {
         windLabel.text = wind
         humidityLabel.text = humidity
         weatherCommentText.text = weatherComments(degrees: degreesInt)
+        setImage(code: imageIcon)
+    }
+    
+    func setImage(code : String) {
+        imageView.image = UIImage(named: code)
     }
     
     
     @IBAction func addToFav(_ sender: Any) {
-        //favCities.append(passedCity)
-        let savedCity = city + ", " + country
-        favCities.append(savedCity)
-        print("favCities count: \(favCities.count)")
+
+        //#warning make an array with dictionaries eller tvärtom
+        let savedCity = city + ", " + country + ", " + String(cityId)
+        
+        if favCities.contains(savedCity) {
+            print("\(savedCity) is already in damn it")
+        } else {
+            favCities.append(savedCity)
+            print("favCities count: \(favCities.count) + favCities: \(favCities)")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,7 +84,7 @@ class SearchedSpecificCityViewController: UIViewController {
         case -9...0:
             return "Ganska kallt"
         case 1...5:
-            return "Kallare än du tror, det är itne vår än!!!"
+            return "Kallare än du tror, det är inte vår än!!!"
         case 6...9:
             return "Helt ok"
         case 10...20:

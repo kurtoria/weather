@@ -17,6 +17,12 @@ var weatherResponse = WeatherResponse(count: 0, list: [List(name: "",
                                                             weather: [Weather(description: "",
                                                                               icon: "")])])
 
+/*var weatherResponse = WeatherResponse(count: 0, list: [List(name: "",
+                                                            id: 0, sys: ["":""],
+                                                            main: ["":0.0], wind: ["":0.0],
+                                                            weather: ["" : ""])])
+ */
+
 struct Weather : Codable {
     let description : String
     let icon : String
@@ -29,6 +35,7 @@ struct List : Codable {
     let main : [String : Float]
     let wind : [String : Float]
     let weather : [Weather]
+    //let weather : [String : String]
 }
 
 struct WeatherResponse : Codable {
@@ -51,12 +58,17 @@ struct ListId : Codable {
     let weather : [Weather]
 }
 
-func getWeather(safeString : String, tableView : UITableView) {
-    //if let safeString = self.searchField.text!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-    print("Goes into func")
+/*
+struct WeatherIcon : Codable {
+    let id : [String : Float]
+    let main : String
+    let description : String
+    let icon : String
+}
+*/
 
+func getWeather(safeString : String, tableView : UITableView) {
     if let url = URL(string: "http://api.openweathermap.org/data/2.5/find?q=\(safeString)&type=like&units=metric&APPID=14551d4f1ec5732a71a52639524f5d97") {
-        //if let url = URL(string: "http://api.openweathermap.org/data/2.5/find?q=\(safeString)&type=like&units=metric&APPID=11c4663bbece8c9fa78ea61f96029874") {
         let request = URLRequest(url: url)
         print("This is the url: \(url)")
         
@@ -74,9 +86,7 @@ func getWeather(safeString : String, tableView : UITableView) {
                         DispatchQueue.main.async {
                             for x in 0..<weatherResponse.count {
                                 searchReult.append(weatherResponse.list[x].name + ", " + weatherResponse.list[x].sys["country"]!)
-                                //print("\(x). City is: \(weatherResponse) and CityId is: ")
                             }
-                            //print("Length on array: \(self.citiesStruct.count)")
                             tableView.reloadData()
                         }
                     } catch let e {
@@ -133,11 +143,33 @@ func getHumidity(i : Int) -> String {
     return humidity
 }
 
-/*
-func getIconText(i : Int) -> String {
-    let iconText = String(format: "\(weatherResponse.list[i].weather["icon"]))
-    return iconText
+func getWeatherIcon(i : Int) -> String {
+    let weatherIcon = weatherResponse.list[i].weather[0].icon
+    print("icon is: \(weatherIcon)")
+    return weatherIcon
 }
-*/
 
+func getImage(code : String) -> String {
+    switch code {
+    case "01d", "01n":
+        return "clear" //clear sky
+    case "02d", "03d", "04d", "02n", "03n", "04n":
+        return "clouds" //few clouds, scattered clouds, broken clouds
+    case "09d", "10d", "09n", "10n":
+        return "rain"
+    case "11d", "11n":
+        return "thunder"
+    case "13d", "13n":
+        return "snow"
+    case "50d", "50n":
+        return "mist"
+    default:
+        return ""
+    }
+}
+
+//#warning fix this so u can save faves
+func getCityFromId(id : Int) {
+    
+}
 

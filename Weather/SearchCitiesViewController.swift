@@ -45,14 +45,14 @@ class SearchCitiesViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchedCell", for: indexPath) as! SearchedCitiesTableViewCell
         if ( weatherResponse.list[indexPath.row].name .isEmpty) {
             cell.cityLabel.text = ""
-            cell.cityId = 0
+            cell.cityIndex = 0
         } else {
             
-            cell.cityId = indexPath.row
+            cell.cityIndex = indexPath.row
             cell.cityLabel.text = getCity(i: indexPath.row) + ", " + getCountryName(i: indexPath.row)
             cell.degreesLabel.text = getDegrees(i: indexPath.row)
             print("Indexpath.row in tableview is: \(indexPath.row)")
-            print("CityId in tableview is: \(cell.cityId)")
+            print("CityId in tableview is: \(cell.cityIndex)")
         }
         return cell
         
@@ -75,8 +75,8 @@ class SearchCitiesViewController: UIViewController, UITableViewDelegate, UITable
             if let cell = sender as? SearchedCitiesTableViewCell {
                 let specificCity : SearchedSpecificCityViewController = segue.destination as! SearchedSpecificCityViewController
 
-                print("Id of city: \(cell.cityId)")
-                if let id = cell.cityId {
+                print("Id of city: \(cell.cityIndex)")
+                if let id = cell.cityIndex {
                     /*
                     specificCity.city = getCity(i: cell.cityId)
                     specificCity.country = getCountryName(i: cell.cityId)
@@ -86,14 +86,18 @@ class SearchCitiesViewController: UIViewController, UITableViewDelegate, UITable
                     specificCity.degreesInt = degreesToInt(i: cell.cityId)
                     print("DegreesInt: \(specificCity.degreesInt)")
                     */
+                    specificCity.cityId = getCityId(i: id)
                     specificCity.city = getCity(i: id)
                     specificCity.country = getCountryName(i: id)
                     specificCity.degrees = getDegrees(i: id)
                     specificCity.wind = getWind(i: id)
                     specificCity.humidity = getHumidity(i: id)
+                    specificCity.imageIcon = getWeatherIcon(i: id)
+                    
                     specificCity.degreesInt = degreesToInt(i: id)
+                    print("Id: \(specificCity.cityId)")
                     print("DegreesInt: \(specificCity.degreesInt)")
-                    print("Id in sendfunc: \(id) and cityId: \(cell.cityId)")
+                    print("Id in sendfunc: \(id) and cityId: \(cell.cityIndex)")
                     
                 }
                     
