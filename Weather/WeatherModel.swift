@@ -143,8 +143,6 @@ func getHumidity(i : Int) -> String {
     return humidity
 }
 
-
-
 func getWeatherIcon(i : Int) -> String {
     let weatherIcon = weatherResponse.list[i].weather[0].icon
     print("icon is: \(weatherIcon)")
@@ -154,9 +152,9 @@ func getWeatherIcon(i : Int) -> String {
 func getImage(code : String) -> String {
     switch code {
     case "01d", "01n":
-        return "clear" //clear sky
+        return "clear"
     case "02d", "03d", "04d", "02n", "03n", "04n":
-        return "clouds" //few clouds, scattered clouds, broken clouds
+        return "clouds"
     case "09d", "10d", "09n", "10n":
         return "rain"
     case "11d", "11n":

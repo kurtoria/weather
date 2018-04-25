@@ -35,12 +35,6 @@ class SearchCitiesViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let indexPath = tableView.indexPathForSelectedRow
-        
-    }
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchedCell", for: indexPath) as! SearchedCitiesTableViewCell
         if ( weatherResponse.list[indexPath.row].name .isEmpty) {
@@ -77,15 +71,6 @@ class SearchCitiesViewController: UIViewController, UITableViewDelegate, UITable
 
                 print("Id of city: \(cell.cityIndex)")
                 if let id = cell.cityIndex {
-                    /*
-                    specificCity.city = getCity(i: cell.cityId)
-                    specificCity.country = getCountryName(i: cell.cityId)
-                    specificCity.degrees = getDegrees(i: cell.cityId)
-                    specificCity.wind = getWind(i: cell.cityId)
-                    specificCity.humidity = getHumidity(i: cell.cityId)
-                    specificCity.degreesInt = degreesToInt(i: cell.cityId)
-                    print("DegreesInt: \(specificCity.degreesInt)")
-                    */
                     specificCity.cityId = getCityId(i: id)
                     specificCity.city = getCity(i: id)
                     specificCity.country = getCountryName(i: id)

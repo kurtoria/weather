@@ -41,8 +41,8 @@ class SearchedSpecificCityViewController: UIViewController {
         humidityLabel.text = humidity
         weatherCommentText.text = weatherComments(degrees: degreesInt)
         
-        var i = getImage(code: imageIcon)
-        setImage(code: i)
+        let iconString = getImage(code: imageIcon)
+        setImage(code: iconString)
     }
     
     func setImage(code : String) {
@@ -50,10 +50,9 @@ class SearchedSpecificCityViewController: UIViewController {
         imageView.image = UIImage(named: code)
     }
     
-    
+    //#warning not done
     @IBAction func addToFav(_ sender: Any) {
 
-        //#warning make an array with dictionaries eller tvärtom
         let savedCity = city + ", " + country + ", " + String(cityId)
         
         if favCities.contains(savedCity) {
@@ -83,19 +82,19 @@ class SearchedSpecificCityViewController: UIViewController {
     func weatherComments(degrees : Int) -> String {
         switch degrees {
         case -40...(-10):
-            return "Rätt megakallt"
+            return "Det är megakallt ute. Stanna inne eller ta på dig massa extrakläder."
         case -9...0:
-            return "Ganska kallt"
+            return "Det är rätt kallt ute, glöm inte handskar!"
         case 1...5:
-            return "Kallare än du tror, det är inte vår än!!!"
+            return "Det är kallare än du tror utomhus, halsduk gör sig fortfarande bättre på kroppen än en förkylning. 🙃"
         case 6...9:
-            return "Helt ok"
-        case 10...20:
-            return "Svenskt sommarväder at it's best"
-        case 21...30:
-            return "Megavarmt"
+            return "Ute är det ganska okej just nu, men en jacka är nog en idé."
+        case 10...24:
+            return "Njut av nordiskt sommarväder at it's best"
+        case 25...30:
+            return "Det är megavarmt utomhus. Drick vatten så du ej får värmeslag!"
         default:
-            return "Oklart"
+            return ""
         }
     }
 

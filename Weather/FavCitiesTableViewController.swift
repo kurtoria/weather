@@ -10,7 +10,6 @@ import UIKit
 
 class FavCitiesTableViewController: UITableViewController, UISearchResultsUpdating {
     var searchController : UISearchController!
-    //var favCities : [Int : String] = [:]
     var favCities : [String] = []
     var searchResult : [String] = []
 
@@ -38,17 +37,6 @@ class FavCitiesTableViewController: UITableViewController, UISearchResultsUpdati
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
     }
-    
-    /*
-    func fromIntToString(intArray : [Int]) -> [String] {
-        var stringArray : [String]
-        for one in intArray {
-            one = getCityName(i: )
-            stringArray.append(one)
-        }
-        return stringArray
-    }
-     */
     
     
     // #warning make more effective later by using own class for search bar
@@ -113,13 +101,7 @@ class FavCitiesTableViewController: UITableViewController, UISearchResultsUpdati
             array = favCities
         }
         
-        //cell.degreesLabel?.text =
         cell.cityLabel?.text = array[indexPath.row]
-        
-        //cell.countryLabel?.text =
-        //cell.weatherImage?.image = UIImage()
-        
-        
         
         return cell
     }

@@ -32,14 +32,8 @@ class StartViewController: UIViewController {
         startImage.image = UIImage(named: "lackOfSunshineMarcJohns")
 
         thunderStruck()
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-            self.dynamicAnimator = UIDynamicAnimator(referenceView: self.secondView)
-            self.gravity = UIGravityBehavior(items: [self.stackViewLogo])
-            self.collision = UICollisionBehavior(items: [self.stackViewLogo])
-            self.dynamicAnimator.addBehavior(self.gravity)
-            self.dynamicAnimator.addBehavior(self.collision)
-            self.collision.translatesReferenceBoundsIntoBoundary = true
+            self.dynamicLogo()
         })
         
     }
@@ -56,19 +50,16 @@ class StartViewController: UIViewController {
     func lightning(end: CGPoint, light : UILabel, duration : Double) {
         UIView.animate(withDuration: duration, animations: {
             light.center = end
-        }) /*{ (complete) in
-            UIView.animate(withDuration: 2.0, animations: {
-                print("Done")
-            })
- 
-        }
- */
+        })
     }
-
-    @IBAction func tapped(_ sender: UITapGestureRecognizer) {
-        let pos = sender.location(in: self.view)
-        print("Tap, \(pos)")
     
+    func dynamicLogo() {
+        self.dynamicAnimator = UIDynamicAnimator(referenceView: self.secondView)
+        self.gravity = UIGravityBehavior(items: [self.stackViewLogo])
+        self.collision = UICollisionBehavior(items: [self.stackViewLogo])
+        self.dynamicAnimator.addBehavior(self.gravity)
+        self.dynamicAnimator.addBehavior(self.collision)
+        self.collision.translatesReferenceBoundsIntoBoundary = true
     }
     
     override func didReceiveMemoryWarning() {
