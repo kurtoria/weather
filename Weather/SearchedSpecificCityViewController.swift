@@ -40,10 +40,13 @@ class SearchedSpecificCityViewController: UIViewController {
         windLabel.text = wind
         humidityLabel.text = humidity
         weatherCommentText.text = weatherComments(degrees: degreesInt)
-        setImage(code: imageIcon)
+        
+        var i = getImage(code: imageIcon)
+        setImage(code: i)
     }
     
     func setImage(code : String) {
+        print("Image code is: \(code)")
         imageView.image = UIImage(named: code)
     }
     

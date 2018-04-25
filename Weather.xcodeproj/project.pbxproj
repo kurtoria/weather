@@ -21,6 +21,7 @@
 		659B2AC12089EBD30055E50E /* FavCitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659B2AC02089EBD30055E50E /* FavCitiesTableViewCell.swift */; };
 		659B2AC32089EC0F0055E50E /* SearchedCitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659B2AC22089EC0F0055E50E /* SearchedCitiesTableViewCell.swift */; };
 		659B2AC52089EC860055E50E /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659B2AC42089EC860055E50E /* WeatherModel.swift */; };
+		65DB1C1D209066C400CCFE76 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB1C1C209066C400CCFE76 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		659B2AC02089EBD30055E50E /* FavCitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCitiesTableViewCell.swift; sourceTree = "<group>"; };
 		659B2AC22089EC0F0055E50E /* SearchedCitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedCitiesTableViewCell.swift; sourceTree = "<group>"; };
 		659B2AC42089EC860055E50E /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		65DB1C1C209066C400CCFE76 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				659B2ABC2089EBAE0055E50E /* CompareWeatherViewController.swift */,
 				659B2ABE2089EBC00055E50E /* DiagramViewController.swift */,
 				659B2AC42089EC860055E50E /* WeatherModel.swift */,
+				65DB1C1C209066C400CCFE76 /* StartViewController.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				659B2ABD2089EBAE0055E50E /* CompareWeatherViewController.swift in Sources */,
 				659B2ABF2089EBC00055E50E /* DiagramViewController.swift in Sources */,
 				659B2AA32089E8980055E50E /* AppDelegate.swift in Sources */,
+				65DB1C1D209066C400CCFE76 /* StartViewController.swift in Sources */,
 				659B2AC32089EC0F0055E50E /* SearchedCitiesTableViewCell.swift in Sources */,
 				659B2ABB2089EB990055E50E /* SearchedSpecificCityViewController.swift in Sources */,
 				659B2AB92089EB760055E50E /* SpecificCityViewController.swift in Sources */,

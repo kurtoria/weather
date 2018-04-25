@@ -300,7 +300,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c4u-Tj-rhu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c4u-Tj-rhu">
                                 <rect key="frame" x="16" y="127" width="343" height="106"/>
                                 <color key="backgroundColor" red="0.48846570109999998" green="0.81633527750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -547,53 +547,73 @@
         <!--Weather Bureau-->
         <scene sceneID="6iG-Bv-6Pa">
             <objects>
-                <viewController id="5p8-Q2-f4T" sceneMemberID="viewController">
+                <viewController id="5p8-Q2-f4T" customClass="StartViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NSx-W5-u4j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hj-ck-1gx">
-                                <rect key="frame" x="139" y="461" width="97" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
-                                <state key="normal" title="Favourites"/>
-                                <connections>
-                                    <segue destination="g5v-oH-Vqb" kind="show" id="e76-AP-Sla"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCm-EE-2Lw">
-                                <rect key="frame" x="112" y="509" width="150" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
-                                <state key="normal" title="Search for cities"/>
-                                <connections>
-                                    <segue destination="HKO-wn-Err" kind="show" id="MJt-mh-d5f"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MyL-ty-jXH">
-                                <rect key="frame" x="16" y="99" width="343" height="183"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.48846570109999998" green="0.81633527750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MyL-ty-jXH">
+                                <rect key="frame" x="16" y="99" width="343" height="288"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weather Bureau" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oE-Pk-iyg">
-                                <rect key="frame" x="16" y="308" width="343" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- The umbrella organization -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cI-zb-ltu">
-                                <rect key="frame" x="16" y="358" width="343" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2cP-oJ-hUw">
+                                <rect key="frame" x="68" y="395" width="239" height="66"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Bureau" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oE-Pk-iyg">
+                                        <rect key="frame" x="0.0" y="0.0" width="239" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- The umbrella organization -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cI-zb-ltu">
+                                        <rect key="frame" x="0.0" y="42" width="239" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SOh-Hp-cPl">
+                                <rect key="frame" x="112" y="536" width="150" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hj-ck-1gx">
+                                        <rect key="frame" x="26.5" y="0.0" width="97" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
+                                        <state key="normal" title="Favourites"/>
+                                        <connections>
+                                            <segue destination="g5v-oH-Vqb" kind="show" id="e76-AP-Sla"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCm-EE-2Lw">
+                                        <rect key="frame" x="0.0" y="40" width="150" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
+                                        <state key="normal" title="Search for cities"/>
+                                        <connections>
+                                            <segue destination="HKO-wn-Err" kind="show" id="MJt-mh-d5f"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2cP-oJ-hUw" firstAttribute="top" secondItem="MyL-ty-jXH" secondAttribute="bottom" constant="8" symbolic="YES" id="9Ag-j2-mJe"/>
+                            <constraint firstItem="2cP-oJ-hUw" firstAttribute="top" secondItem="NSx-W5-u4j" secondAttribute="top" constant="395" id="DzP-y5-RLN"/>
+                            <constraint firstItem="MyL-ty-jXH" firstAttribute="leading" secondItem="NSx-W5-u4j" secondAttribute="leadingMargin" id="LrF-gi-Zf6"/>
+                            <constraint firstItem="MyL-ty-jXH" firstAttribute="top" secondItem="wHL-6i-ph6" secondAttribute="top" constant="35" id="XpA-So-u1U"/>
+                            <constraint firstItem="2cP-oJ-hUw" firstAttribute="centerX" secondItem="SOh-Hp-cPl" secondAttribute="centerX" id="b74-kB-py1"/>
+                            <constraint firstItem="2cP-oJ-hUw" firstAttribute="centerX" secondItem="MyL-ty-jXH" secondAttribute="centerX" id="eCt-zX-A0H"/>
+                            <constraint firstItem="SOh-Hp-cPl" firstAttribute="top" secondItem="2cP-oJ-hUw" secondAttribute="bottom" constant="75" id="eUG-4U-ti1"/>
+                            <constraint firstItem="2cP-oJ-hUw" firstAttribute="top" secondItem="MyL-ty-jXH" secondAttribute="bottom" constant="8" id="g7G-pU-vHf"/>
+                            <constraint firstItem="2cP-oJ-hUw" firstAttribute="centerX" secondItem="NSx-W5-u4j" secondAttribute="centerX" id="lOE-ez-tIU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wHL-6i-ph6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather Bureau" id="eid-gL-vs7"/>
+                    <connections>
+                        <outlet property="logoLabel" destination="2oE-Pk-iyg" id="Gzr-jZ-yaT"/>
+                        <outlet property="startImage" destination="MyL-ty-jXH" id="rZG-m2-N0v"/>
+                        <outlet property="underLogoLabel" destination="1cI-zb-ltu" id="OT8-Qt-Tdb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzY-Mf-JsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

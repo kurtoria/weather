@@ -143,6 +143,8 @@ func getHumidity(i : Int) -> String {
     return humidity
 }
 
+
+
 func getWeatherIcon(i : Int) -> String {
     let weatherIcon = weatherResponse.list[i].weather[0].icon
     print("icon is: \(weatherIcon)")
