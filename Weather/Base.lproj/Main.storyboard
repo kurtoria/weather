@@ -552,7 +552,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MyL-ty-jXH">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SOh-Hp-cPl">
+                                <rect key="frame" x="112" y="536" width="150" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hj-ck-1gx">
+                                        <rect key="frame" x="26.5" y="0.0" width="97" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
+                                        <state key="normal" title="Favourites">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.4392156862745098" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="g5v-oH-Vqb" kind="show" id="e76-AP-Sla"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCm-EE-2Lw">
+                                        <rect key="frame" x="0.0" y="40" width="150" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
+                                        <state key="normal" title="Search for cities">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.43921568630000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="HKO-wn-Err" kind="show" id="MJt-mh-d5f"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lackOfSunshineMarcJohns" translatesAutoresizingMaskIntoConstraints="NO" id="MyL-ty-jXH">
                                 <rect key="frame" x="16" y="99" width="343" height="288"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2cP-oJ-hUw">
@@ -572,29 +597,51 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SOh-Hp-cPl">
-                                <rect key="frame" x="112" y="536" width="150" height="80"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hj-ck-1gx">
-                                        <rect key="frame" x="26.5" y="0.0" width="97" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
-                                        <state key="normal" title="Favourites"/>
-                                        <connections>
-                                            <segue destination="g5v-oH-Vqb" kind="show" id="e76-AP-Sla"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCm-EE-2Lw">
-                                        <rect key="frame" x="0.0" y="40" width="150" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
-                                        <state key="normal" title="Search for cities"/>
-                                        <connections>
-                                            <segue destination="HKO-wn-Err" kind="show" id="MJt-mh-d5f"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⚡️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJR-h2-Uoq">
+                                <rect key="frame" x="300" y="38" width="45" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⚡️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOS-HL-vHP">
+                                <rect key="frame" x="356" y="177" width="45" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⚡️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHi-9h-ZZw">
+                                <rect key="frame" x="356" y="99" width="45" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⚡️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GU-FK-9Sn">
+                                <rect key="frame" x="155" y="38" width="45" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⚡️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQs-uh-FkA">
+                                <rect key="frame" x="232" y="38" width="45" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⚡️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLY-kW-kng">
+                                <rect key="frame" x="356" y="290" width="45" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="2cP-oJ-hUw" firstAttribute="top" secondItem="MyL-ty-jXH" secondAttribute="bottom" constant="8" symbolic="YES" id="9Ag-j2-mJe"/>
                             <constraint firstItem="2cP-oJ-hUw" firstAttribute="top" secondItem="NSx-W5-u4j" secondAttribute="top" constant="395" id="DzP-y5-RLN"/>
@@ -607,15 +654,29 @@
                             <constraint firstItem="2cP-oJ-hUw" firstAttribute="centerX" secondItem="NSx-W5-u4j" secondAttribute="centerX" id="lOE-ez-tIU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wHL-6i-ph6"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kdg-Rb-Nv9" appends="YES" id="Hda-oY-0zT"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Weather Bureau" id="eid-gL-vs7"/>
                     <connections>
+                        <outlet property="lightning1" destination="rJR-h2-Uoq" id="cON-iY-vVH"/>
+                        <outlet property="lightning2" destination="vOS-HL-vHP" id="B84-E9-3zx"/>
+                        <outlet property="lightning3" destination="nHi-9h-ZZw" id="dcg-UB-qx2"/>
+                        <outlet property="lightning4" destination="HQs-uh-FkA" id="5Ir-GE-f0N"/>
+                        <outlet property="lightning5" destination="7GU-FK-9Sn" id="AW9-8i-0N5"/>
+                        <outlet property="lightning6" destination="TLY-kW-kng" id="JAl-C7-Goa"/>
                         <outlet property="logoLabel" destination="2oE-Pk-iyg" id="Gzr-jZ-yaT"/>
                         <outlet property="startImage" destination="MyL-ty-jXH" id="rZG-m2-N0v"/>
-                        <outlet property="underLogoLabel" destination="1cI-zb-ltu" id="OT8-Qt-Tdb"/>
+                        <outlet property="underLogoLabel" destination="qCm-EE-2Lw" id="S1c-hj-f1z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzY-Mf-JsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kdg-Rb-Nv9">
+                    <connections>
+                        <action selector="tapped:" destination="5p8-Q2-f4T" id="Ha3-l4-soI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1356" y="71.514242878560722"/>
         </scene>
@@ -769,6 +830,9 @@
             <point key="canvasLocation" x="617" y="72"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lackOfSunshineMarcJohns" width="291" height="422"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MJt-mh-d5f"/>
     </inferredMetricsTieBreakers>
