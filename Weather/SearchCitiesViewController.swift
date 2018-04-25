@@ -22,7 +22,7 @@ class SearchCitiesViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBAction func searchButton(_ sender: Any) {
         searchReult = []
-        getWeather(safeString: searchField.text!, tableView: tableView)
+        getWeather(safeString: searchField.text!, tableView: tableView, searchField: searchField.text!)
         searchField.text = ""
     }
     

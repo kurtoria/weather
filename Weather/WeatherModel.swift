@@ -67,8 +67,9 @@ struct WeatherIcon : Codable {
 }
 */
 
-func getWeather(safeString : String, tableView : UITableView) {
-    if let url = URL(string: "http://api.openweathermap.org/data/2.5/find?q=\(safeString)&type=like&units=metric&APPID=14551d4f1ec5732a71a52639524f5d97") {
+func getWeather(safeString : String, tableView : UITableView, searchField : String) {
+    if let safeString = searchField.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+        let url = URL(string: "http://api.openweathermap.org/data/2.5/find?q=\(safeString)&type=like&units=metric&APPID=14551d4f1ec5732a71a52639524f5d97") {
         let request = URLRequest(url: url)
         print("This is the url: \(url)")
         
