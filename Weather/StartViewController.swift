@@ -12,6 +12,8 @@ class StartViewController: UIViewController {
     @IBOutlet weak var startImage: UIImageView!
     @IBOutlet weak var logoLabel: UILabel!
     @IBOutlet weak var underLogoLabel: UIButton!
+    @IBOutlet weak var secondView: UIView!
+    @IBOutlet weak var stackViewLogo: UIStackView!
     
     @IBOutlet weak var lightning1: UILabel!
     @IBOutlet weak var lightning2: UILabel!
@@ -21,23 +23,29 @@ class StartViewController: UIViewController {
     @IBOutlet weak var lightning6: UILabel!
     
     var dynamicAnimator : UIDynamicAnimator!
+    var gravity : UIGravityBehavior!
+    var collision : UICollisionBehavior!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //startImage.image = UIImage(named: "lackOfSunshineMarcJohns")
-        dynamicAnimator = UIDynamicAnimator(referenceView: view)
-        
-        
-        //lightning3.isHidden = true
-        //lightning4.isHidden = true
-        //lightning5.isHidden = true
+        startImage.image = UIImage(named: "lackOfSunshineMarcJohns")
+
         thunderStruck()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+            self.dynamicAnimator = UIDynamicAnimator(referenceView: self.secondView)
+            self.gravity = UIGravityBehavior(items: [self.stackViewLogo])
+            self.collision = UICollisionBehavior(items: [self.stackViewLogo])
+            self.dynamicAnimator.addBehavior(self.gravity)
+            self.dynamicAnimator.addBehavior(self.collision)
+            self.collision.translatesReferenceBoundsIntoBoundary = true
+        })
         
     }
     
     func thunderStruck() {
-        lightning(end: CGPoint(x: -15.0, y: 470.0), light: lightning1, duration: 2.5)
+        lightning(end: CGPoint(x: -15.0, y: 470.0), light: lightning1, duration: 2.0)
         lightning(end: CGPoint(x: -12.0, y: 640.0), light: lightning2, duration: 2.0)
         lightning(end: CGPoint(x: -12.0, y: 580.0), light: lightning3, duration: 1.5)
         lightning(end: CGPoint(x: -12.0, y: 380.0), light: lightning4, duration: 1.5)

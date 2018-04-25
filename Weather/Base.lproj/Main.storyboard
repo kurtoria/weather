@@ -577,28 +577,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lackOfSunshineMarcJohns" translatesAutoresizingMaskIntoConstraints="NO" id="MyL-ty-jXH">
-                                <rect key="frame" x="16" y="99" width="343" height="288"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MyL-ty-jXH">
+                                <rect key="frame" x="42" y="99" width="291" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="288" id="zhR-v1-y6c"/>
+                                </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2cP-oJ-hUw">
-                                <rect key="frame" x="68" y="395" width="239" height="66"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Bureau" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oE-Pk-iyg">
-                                        <rect key="frame" x="0.0" y="0.0" width="239" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- The umbrella organization -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cI-zb-ltu">
-                                        <rect key="frame" x="0.0" y="42" width="239" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⚡️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJR-h2-Uoq">
                                 <rect key="frame" x="300" y="38" width="45" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⚡️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLY-kW-kng">
+                                <rect key="frame" x="356" y="290" width="45" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
@@ -632,26 +625,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⚡️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLY-kW-kng">
-                                <rect key="frame" x="356" y="290" width="45" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nc-Ha-uo7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="461"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2cP-oJ-hUw">
+                                        <rect key="frame" x="68" y="0.0" width="239" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Weather Bureau" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oE-Pk-iyg">
+                                                <rect key="frame" x="0.0" y="0.0" width="239" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="- The umbrella organization -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cI-zb-ltu">
+                                                <rect key="frame" x="0.0" y="42" width="239" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="2cP-oJ-hUw" firstAttribute="top" secondItem="MyL-ty-jXH" secondAttribute="bottom" constant="8" symbolic="YES" id="9Ag-j2-mJe"/>
-                            <constraint firstItem="2cP-oJ-hUw" firstAttribute="top" secondItem="NSx-W5-u4j" secondAttribute="top" constant="395" id="DzP-y5-RLN"/>
-                            <constraint firstItem="MyL-ty-jXH" firstAttribute="leading" secondItem="NSx-W5-u4j" secondAttribute="leadingMargin" id="LrF-gi-Zf6"/>
-                            <constraint firstItem="MyL-ty-jXH" firstAttribute="top" secondItem="wHL-6i-ph6" secondAttribute="top" constant="35" id="XpA-So-u1U"/>
-                            <constraint firstItem="2cP-oJ-hUw" firstAttribute="centerX" secondItem="SOh-Hp-cPl" secondAttribute="centerX" id="b74-kB-py1"/>
-                            <constraint firstItem="2cP-oJ-hUw" firstAttribute="centerX" secondItem="MyL-ty-jXH" secondAttribute="centerX" id="eCt-zX-A0H"/>
-                            <constraint firstItem="SOh-Hp-cPl" firstAttribute="top" secondItem="2cP-oJ-hUw" secondAttribute="bottom" constant="75" id="eUG-4U-ti1"/>
-                            <constraint firstItem="2cP-oJ-hUw" firstAttribute="top" secondItem="MyL-ty-jXH" secondAttribute="bottom" constant="8" id="g7G-pU-vHf"/>
-                            <constraint firstItem="2cP-oJ-hUw" firstAttribute="centerX" secondItem="NSx-W5-u4j" secondAttribute="centerX" id="lOE-ez-tIU"/>
+                            <constraint firstItem="MyL-ty-jXH" firstAttribute="top" secondItem="NSx-W5-u4j" secondAttribute="top" constant="99" id="2Rj-9l-WHP"/>
+                            <constraint firstItem="SOh-Hp-cPl" firstAttribute="top" secondItem="7nc-Ha-uo7" secondAttribute="bottom" constant="75" id="2mT-oh-5X4"/>
+                            <constraint firstItem="7nc-Ha-uo7" firstAttribute="leading" secondItem="NSx-W5-u4j" secondAttribute="leading" id="Bfp-SD-LyG"/>
+                            <constraint firstItem="SOh-Hp-cPl" firstAttribute="centerX" secondItem="NSx-W5-u4j" secondAttribute="centerX" id="Is3-CS-Yo0"/>
+                            <constraint firstItem="7nc-Ha-uo7" firstAttribute="top" secondItem="NSx-W5-u4j" secondAttribute="top" id="PWf-eT-OCQ"/>
+                            <constraint firstItem="7nc-Ha-uo7" firstAttribute="centerX" secondItem="MyL-ty-jXH" secondAttribute="centerX" id="SrD-SC-1Qe"/>
+                            <constraint firstItem="SOh-Hp-cPl" firstAttribute="centerX" secondItem="7nc-Ha-uo7" secondAttribute="centerX" id="W2f-1z-8bX"/>
+                            <constraint firstItem="SOh-Hp-cPl" firstAttribute="centerX" secondItem="MyL-ty-jXH" secondAttribute="centerX" id="m8F-ml-L50"/>
+                            <constraint firstItem="wHL-6i-ph6" firstAttribute="bottom" secondItem="SOh-Hp-cPl" secondAttribute="bottom" constant="51" id="pRf-na-2Oz"/>
+                            <constraint firstItem="MyL-ty-jXH" firstAttribute="leading" secondItem="wHL-6i-ph6" secondAttribute="leading" constant="42" id="qZI-Dh-iWB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wHL-6i-ph6"/>
                         <connections>
@@ -667,6 +677,8 @@
                         <outlet property="lightning5" destination="7GU-FK-9Sn" id="AW9-8i-0N5"/>
                         <outlet property="lightning6" destination="TLY-kW-kng" id="JAl-C7-Goa"/>
                         <outlet property="logoLabel" destination="2oE-Pk-iyg" id="Gzr-jZ-yaT"/>
+                        <outlet property="secondView" destination="7nc-Ha-uo7" id="XaP-gO-Y3c"/>
+                        <outlet property="stackViewLogo" destination="2cP-oJ-hUw" id="V16-jh-tbk"/>
                         <outlet property="startImage" destination="MyL-ty-jXH" id="rZG-m2-N0v"/>
                         <outlet property="underLogoLabel" destination="qCm-EE-2Lw" id="S1c-hj-f1z"/>
                     </connections>
@@ -830,9 +842,6 @@
             <point key="canvasLocation" x="617" y="72"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="lackOfSunshineMarcJohns" width="291" height="422"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MJt-mh-d5f"/>
     </inferredMetricsTieBreakers>
